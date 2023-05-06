@@ -15,6 +15,12 @@ export class GetEstimateDto {
   @Max(1000000)
   price: number;
 
+  @Transform(({ value }) => parseInt(value))
+  @IsNumber()
+  @Min(0)
+  @Max(1000000)
+  mileage: number;
+
   @IsString()
   make: string;
 
